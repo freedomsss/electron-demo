@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-<!--    <router-view></router-view>-->
+<!--<router-view></router-view>-->
     <div>
       <div>num: {{num}} + 6</div>
       <div>result: {{result}}</div>
@@ -27,39 +27,39 @@
 </template>
 
 <script>
-  import edgeModules from '../main/edgeModules/index.js';
-  import Video from './components/Video';
-  // const ffmpeg = require('fluent-ffmpeg');
+import edgeModules from '../main/edgeModules/index';
+import Video from './components/Video.vue';
+// const ffmpeg = require('fluent-ffmpeg');
 
 
-  export default {
-    name: 'electron_demo',
-    data() {
-      return {
-        num: 4,
-        result: 0,
-      };
+export default {
+  name: 'electron_demo',
+  data() {
+    return {
+      num: 4,
+      result: 0,
+    };
+  },
+  components: {
+    Video,
+  },
+  mounted() {
+    // // console.log('通过dll获取到的值：');
+    // edgeModules.helloWorld('JavaScript', (error, result) => {
+    //   if (error) throw error;
+    //   // console.log(result);
+    // });
+  },
+  methods: {
+    add() {
+      const that = this;
+      edgeModules.add(Number(this.num++), (error, result) => {
+        if (error) throw error;
+        that.result = result;
+      });
     },
-    components: {
-      Video,
-    },
-    mounted() {
-      // // console.log('通过dll获取到的值：');
-      // edgeModules.helloWorld('JavaScript', (error, result) => {
-      //   if (error) throw error;
-      //   // console.log(result);
-      // });
-    },
-    methods: {
-      add() {
-        const that = this;
-        edgeModules.add(Number(this.num++), (error, result) => {
-          if (error) throw error;
-          that.result = result;
-        });
-      },
-    },
-  };
+  },
+};
 </script>
 
 <style>

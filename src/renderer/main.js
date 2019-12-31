@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import axios from 'axios';
+// import axios from 'axios';
 
 import Video from 'video.js';
 import 'video.js/dist/video-js.css';
@@ -12,7 +12,7 @@ import video_en from 'video.js/dist/lang/en.json';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
-import App from './App';
+import App from './App.vue';
 import router from './router';
 import store from './store';
 
@@ -23,7 +23,8 @@ Video.addLanguage('zh-CN', video_zhCN);
 Video.addLanguage('en', video_en);
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'));
-Vue.http = Vue.prototype.$http = axios;
+
+// Vue.http = Vue.prototype.$http = axios;
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import path from 'path';
 
 const edge = require('electron-edge-js');
