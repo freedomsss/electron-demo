@@ -28,7 +28,7 @@
     "postinstall": "npm run lint:fix"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "core-js": "^2.6.5",
     "electron-edge-js": "^12.8.1",
     "element-ui": "^2.13.0",
