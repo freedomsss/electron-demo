@@ -93,7 +93,7 @@
     "mocha": "^6.2.2",
     "multispinner": "^0.2.1",
     "node-loader": "^0.6.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "require-dir": "^1.2.0",
     "sass-loader": "^8.0.0",
     "spectron": "^9.0.0",
